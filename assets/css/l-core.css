@@ -1,0 +1,108 @@
+/*
+* Brick the Code
+* learn
+*/
+
+
+@font-face{
+	font-family: Ubuntu;
+	src: url('fonts/Ubuntu.ttf') format('truetype');
+}
+@font-face{
+	font-family: UbuntuC;
+	src: url('fonts/UbuntuC.ttf') format('truetype');
+}
+@font-face{
+	font-family: mrbedfort;
+	src: url('fonts/mrbedfort.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'Open Sans';
+	src: url('fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face{
+	font-family: trebuchet;
+	src: url('fonts/trebuchet-ms.ttf') format('truetype');
+}
+@font-face{
+	font-family: plakkaat;
+	src: url('fonts/Plakkaat.ttf') format('truetype');
+}
+html{	height:400px;	width:100%; }
+body{
+	position: relative;
+	height:100%;	width:100%;
+	background: rgba(255, 255, 255, 0.8) url(../img/learn_bg.jpg) center; background-size: 100%;
+	background-position: 0 24%;
+}
+*{	margin: 0; padding: 0; }
+
+
+
+.header {
+	position: relative; top: 0; height: 60px; width: 100%;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.45),inset 0 -1px 0 rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	-o-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+}
+.header-wrp {
+	position: relative; top: 0; height: 60px; width: 980px; margin: 0 auto;
+	background: url(../img/btc.png) left no-repeat; background-size: 60px 60px;
+}
+a#i { position: absolute; height: 60px; width: 60px; }
+.header-wrp ul { position: absolute; float: right; right: 0; height: 60px; width: 700px; }
+.header-wrp ul a {
+	position: relative; display: inline; list-style-type: none; float: right;
+	height: 42px; min-width: 80px; width: auto; font: lighter 16px 'Open Sans'; color: #222; padding-top: 18px;
+	margin-left: 15px; text-decoration: none; text-align: center;
+}
+.header-wrp ul a:hover { text-decoration: underline; }
+
+.content {
+	position: relative; top: 0; height: 450px; width: 980px; margin: 0 auto;
+	padding-top: 50px; font: lighter 30px 'Open Sans'; text-align: center; color: #333;
+	background: rgba(255, 255, 255, 0.6);
+	box-shadow: 0px 4px 4px #222, 0px 4px 4px #222;
+}
+.link-container {
+	position: absolute; top: 340px; left: 50%; height: 60px; width: 400px; margin: -60px 0 0 -200px;
+}
+.l-core-link {
+	position: relative; 
+	height: 45px; width: 140px; padding-left: 30px;
+	font: 12px UbuntuC; color: #fff;
+}
+#g-link {
+	background: #1c74b3 url(../img/gameicon.png) no-repeat; background-position: 25px 10px;
+}
+#c-link {
+	background: green url(../img/codeicon.png) no-repeat; background-position: 20px 10px;;
+}
+
+
+.footer-line {
+	position: relative; top: 0px; height: 5px; width: 100%;
+	background: #80bbf7;
+}
+.footer {
+	position: relative; top: 0; height: 150px; width: 100%;
+	background: #111;
+}
+.footer-c {
+	position: relative; top: 0; height: 140px; width: 980px; margin: 0 auto; padding-top: 10px;
+	font: bold 14px Arial, 'Arial Black'; text-align: center; color: #999;
+}
+.footer-c ul {
+	position: relative; top: 30px; height: 50px; width: 100px;
+	text-align: left;
+}
+.footer-c ul a {
+	position: relative; display: block; list-style-type: none; margin-top: 5px;
+	font: bold 12px 'Open Sans'; text-decoration: none; color: #1c74b3;
+}
+.footer-c ul a:hover {
+	color: #e1e1e1;
+}

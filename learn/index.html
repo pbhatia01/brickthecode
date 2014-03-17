@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Description" id="meta-description" content="Brick the Code is a free application and an open source project for young brains and
+	 tyros who wish to learn coding.">
+<meta name="keywords" content="learn coding, learn programming, how to code, open source, coding tutorial, coding for beginners, novices, 
+	simple how to code, easy coding tutorial, coding for kids">
+
+	<link rel="stylesheet" type="text/css" href="/brickthecode/assets/css/l-code.css">
+	<script src="/brickthecode/assets/js-libs/require.js" data-main='/brickthecode/src/code-main.js'></script>
+	<link rel="shortcut icon" href="/brickthecode/assets/img/btc.png" />
+
+	<link rel="stylesheet" href="/brickthecode/assets/js-libs/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="/brickthecode/assets/js-libs/codemirror/theme/ambiance.css">
+	<script src="/brickthecode/assets/js-libs/codemirror/lib/codemirror.js"></script>
+	<script src="/brickthecode/assets/js-libs/codemirror/mode/javascript/javascript.js"></script>
+
+<title>Learn to write code | Brick The Code</title>
+</head>
+
+<body ondragstart="return false;">
+	<div class='header'>
+		<div class='header-wrp'>
+			<a href='/btc' id='i'></a>
+			
+		</div>
+	<div>
+
+	<div class='content'>
+		<div id='titleBar' class='titleBar'></div>
+
+		<div class='win_'>
+			<div class='win_Prog'>
+				<li title='Jump to Media Functions'>Media</li>
+				<li title='Jump to Loops'>Loops</li>
+				<li title='Jump to Conditions'>Conditions</li>
+				<li title='Jump to Text Tutorial'>Text</li>
+				<li title='Jump to Math Tutorial'>Math</li>
+				<li title='Jump to Basic Input-Output Tutorial'>I/O</li>
+				<li title='Jump to Introduction'>Introduction</li>
+			</div>
+
+
+
+			<iframe id='_O' name='_O' class='win_Out'></iframe>
+
+			<div class='win_Tut'>
+				<div id='tut_' class='Tut_1'></div>
+				<div id='tut__' class='Tut_2'></div>
+				<button id='_run' class='tutRead off'>OK</button>
+			</div>
+		</div>
+
+		<div class='cmmnd_'>
+			<form id='coderun' action='/brickthecode/_display.php' method='post' target='_O' style='display: none;'>
+				<textarea id='code' name='code'></textarea>
+				<input type='hidden' name='level' value='a'>
+			</form>
+			<div id='cmdWin' class='cmd' spellcheck='false'></div>
+			<button id='run' class='run' title='Run Code'></button>
+		</div>
+	</div>
+
+	<div class='footer-line'></div>
+	<div class='footer'>
+		<div class='footer-c'>
+			Brick The Code
+			<div style='color:#333;'>is Free and Open Source for always</div>
+			<ul>
+				<a href='https://github.com/brickthecode/brickthecode/blob/master/MIT-LICENSE.txt'>LICENSE</a>
+				<a href='https://github.com/brickthecode/brickthecode/'>GITHUB</a>
+			</ul>
+		</div>
+	</div>
+
+
+	<div id='note-frame' class='off'>	
+		<div class='error'>
+			<h3>Oops ! You got it wrong !</h3><br><br>
+			Check if :<br><br>
+			<ul style="font: 15px Arial; list-style-type:none;">
+				<li>&middot;&nbsp;You missed the semicolon</li>
+				<li>&middot;&nbsp;You didn't closed the inverted commas</li>
+				<li>&middot;&nbsp;You didn't close the brackets</li>
+				<li>&middot;&nbsp;You made a typing mistake with code</li>
+			</ul><br><br><br>
+			<button id='exit-error'>Got it, Lemme Try Again!</button>
+		</div>
+	</div>
+
+
+	<script>
+		(function() {
+		  CodeMirror.defineOption("placeholder", "< code >", function(cm, val, old) {
+		    var prev = old && old != CodeMirror.Init;
+		    if (val && !prev) {
+		      cm.on("focus", onFocus);
+		      cm.on("blur", onBlur);
+		      cm.on("change", onChange);
+		      onChange(cm);
+		    } else if (!val && prev) {
+		      cm.off("focus", onFocus);
+		      cm.off("blur", onBlur);
+		      cm.off("change", onChange);
+		      clearPlaceholder(cm);
+		      var wrapper = cm.getWrapperElement();
+		      wrapper.className = wrapper.className.replace(" CodeMirror-empty", "");
+		    }
+
+		    if (val && !cm.hasFocus()) onBlur(cm);
+		  });
+
+		  function clearPlaceholder(cm) {
+		    if (cm.state.placeholder) {
+		      cm.state.placeholder.parentNode.removeChild(cm.state.placeholder);
+		      cm.state.placeholder = null;
+		    }
+		  }
+		  function setPlaceholder(cm) {
+		    clearPlaceholder(cm);
+		    var elt = cm.state.placeholder = document.createElement("pre");
+		    elt.style.cssText = "height: 0; overflow: visible";
+		    elt.className = "CodeMirror-placeholder";
+		    elt.appendChild(document.createTextNode(cm.getOption("placeholder")));
+		    cm.display.lineSpace.insertBefore(elt, cm.display.lineSpace.firstChild);
+		  }
+
+		  function onFocus(cm) {
+		    clearPlaceholder(cm);
+		  }
+		  function onBlur(cm) {
+		    if (isEmpty(cm)) setPlaceholder(cm);
+		  }
+		  function onChange(cm) {
+		    var wrapper = cm.getWrapperElement(), empty = isEmpty(cm);
+		    wrapper.className = wrapper.className.replace(" CodeMirror-empty", "") + (empty ? " CodeMirror-empty" : "");
+
+		    if (cm.hasFocus()) return;
+		    if (empty) setPlaceholder(cm);
+		    else clearPlaceholder(cm);
+		  }
+
+		  function isEmpty(cm) {
+		    return (cm.lineCount() === 1) && (cm.getLine(0) === "");
+		  }
+
+		})();
+
+		window.editor = CodeMirror(document.getElementById("cmdWin"), {
+			mode: "javascript",
+	        lineNumbers: true,
+	        matchBrackets: true,
+	        theme: "ambiance"
+	    });
+	    editor.setSize(690,65);
+		editor.getWrapperElement().style.top = "0px";
+	</script>
+
+
+</body> 
+</html>

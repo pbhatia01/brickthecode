@@ -1,0 +1,143 @@
+
+/****
+	fonts
+****/
+
+@font-face{
+	font-family: 'Ubuntu';
+	src: url('fonts/Ubuntu.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'UbuntuCondensed';
+	src: url('fonts/UbuntuC.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'MrBedfort';
+	src: url('fonts/mrbedfort.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'OpenSans';
+	src: url('fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'TrebuchetMS';
+	src: url('fonts/trebuchet-ms.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'Verdana';
+	src: url('fonts/Verdana.ttf') format('truetype');
+}
+
+
+
+.square{
+	position: relative; margin-top: 5px; top: 0px;
+	height: 34px; width: 34px;
+	background: #333;
+}
+.rectangle{
+	position: relative; margin-top: 5px; top: 0px;
+	height: 34px; width: 68px;
+	background: #333;
+}
+.circle{
+	position: relative; margin-top: 5px; top: 0px;
+	height: 40px; width: 40px;
+	background: #333;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	border-radius: 20px;
+}
+.triangle{
+	position: relative; margin-top: 5px; top: 0px;
+	width: 0; 
+	height: 0; 
+	border-left: 26px solid transparent;
+	border-right: 26px solid transparent;
+	border-bottom: 39px solid;
+	border-bottom-color: #333; 
+}
+
+input{
+	display: block;
+}
+
+p{
+	display: inline;
+	font: 14px Arial;
+}
+
+audio{
+	display: block;
+}
+
+.heading{
+	display: block; margin: 0 auto;
+	height: 32px; width: auto; padding: 0 2px;
+	font: 22px Arial; text-align: center;
+}
+
+.run{
+	display: block;
+	background-color: #69a74e;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+	border: 1px solid #3b6e22;
+	height: 25px; width: auto; padding: 0 5px;
+	cursor: pointer;
+	font: 12px Arial, Helvetica; text-align: center;
+	color: #fff;
+}
+.run:active{
+	background-color: #689f4f;
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.5) inset;    
+}
+
+.err{
+	position: relative; display: block; margin: 5px auto;
+	width: 400px; height: 28px;
+	background: rgba(244,145,145,0.5);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	padding-top: 8px;
+	font: 14px Arial; color: red; text-align: center;
+}
+
+div.aud_file, div.vid_file {
+	display: block;
+	height: 21px; width: 100px; padding-top: 6px;
+	background-color: #555;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	border: 1px solid #000;
+	cursor: pointer; text-align: center;
+	font: lighter 12px Ubuntu;
+	color: #fff;
+}
+audio, video { display: block; }
+
+iframe.webpg {
+	position: relative; display: block; margin: 5px auto;
+	width: 420px; height: 220px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	padding-top: 8px;
+	border: 1px solid #444;
+}
