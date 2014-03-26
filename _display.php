@@ -13,10 +13,7 @@
   
   	<script type='text/javascript' src='src/code-app/jquery.js'></script>
 	<?php
-		if($level == 'b'){
-			echo('<script type="text/javascript" src="src/game-app/core-util.js"></script>');
-		}
-		else if($level == 'a'){
+		 if($level == 'a'){
 			echo('<script type="text/javascript" src="src/code-app/core-util.js"></script>'.
 					'<script type="text/javascript" src="assets/js-libs/mediaelement/build/mediaelement-and-player.min.js"></script>'.
 					'<link rel="stylesheet" href="assets/js-libs/mediaelement/build/mediaelementplayer.css">');	
@@ -24,18 +21,6 @@
 	?>	
   
   <link rel="stylesheet" type="text/css" href="assets/css/basic.css">
-  
-
-
-<?php if($level == 'b') 
-	echo "<script type='text/javascript'>//<![CDATA[ 
-		$(window).load(function(){"." $code "."});//]]>  
-
-</script>"; 
-?>
-
-
-
 </head>
 <body>
   
